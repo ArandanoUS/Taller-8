@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Editar {{ nombre }}{% endblock %}
+
+{% block content %}
+    <h2>Editar Receta: {{ nombre }}</h2>
+    <form method="post">
+        <label for="ingredientes">Ingredientes:</label>
+        <textarea id="ingredientes" name="ingredientes" required>{{ receta['ingredientes'] }}</textarea>
+        <br>
+        <label for="pasos">Pasos:</label>
+        <textarea id="pasos" name="pasos" required>{{ receta['pasos'] }}</textarea>
+        <br>
+        <button type="submit">Guardar cambios</button>
+    </form>
+    <a href="{{ url_for('ver_receta', nombre=nombre) }}">⬅️ Cancelar</a>
+{% endblock %}
+

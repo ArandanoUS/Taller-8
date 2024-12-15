@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ nombre }} - Detalles de la Receta{% endblock %}
+
+{% block content %}
+    <h2>{{ nombre }}</h2>
+    <p><strong>Ingredientes:</strong> {{ receta['ingredientes'] }}</p>
+    <p><strong>Pasos:</strong> {{ receta['pasos'] }}</p>
+    <a href="{{ url_for('editar_receta', nombre=nombre) }}">✏️ Editar receta</a>
+    <a href="{{ url_for('index') }}">⬅️ Volver al inicio</a>
+{% endblock %}
